@@ -8,6 +8,8 @@
 2. 考虑多级运算
 3. 考虑带括号的情况
 4. 考虑负数情况
+5. 考虑算式不合法的情况
+6. 考虑不同实现方式：非递归、递归、状态机
 
 """
 import unittest
@@ -111,10 +113,12 @@ class Calculator:
     def calculate3(self,formula:str):
         """再在上面的版本中加入对括号的处理
         思路：在遇到右括号时，一直将符号栈压出，直到左括号被压出
+        再在括号处理的基础上做对于负数的处理：(-1)
         """
-        op_stack = ['+']
-        num_stack = [0]
+        op_stack = []
+        num_stack = []
         num = 0
+        first_negative = False
         for c in formula:
             if c == ' ':
                 continue
@@ -124,6 +128,11 @@ class Calculator:
                 if c == '(':
                     op_stack.append(c)
                 elif c == ')':
+                    if first_negative:
+                        num = -num
+                        op_stack.pop()  # pop -
+                        num_stack.pop() # pop 0
+                        first_negative = False
                     num_stack.append(num)
                     while len(op_stack) > 0 :
                         last_op = op_stack.pop()
@@ -139,25 +148,38 @@ class Calculator:
                             num_stack.append(f2 * f1)
                         else:
                             num_stack.append(f2*1.0 / f1)
-                        print(f"op: {op_stack}, num: {num_stack}")
+                        print(f"op: {op_stack}, num: {num_stack},last_num: {num}")
                     num = num_stack.pop()
                 else:
                     last_op = op_stack[-1] if len(op_stack) > 0 else None
                     if last_op in ['+','-','*','/']:
-                        if last_op in ['+', '-']:
+                        if first_negative:
+                            num = -num
+                            op_stack.pop()
+                            num_stack.pop()
+                            first_negative = False
+                        elif last_op in ['+', '-']:
                             if c not in ['*','/']:
                                 last_num = num_stack.pop()
                                 num = last_num + num * (1 if last_op == '+' else -1)
                         else:
                             last_num = num_stack.pop()
+                            op_stack.pop()
                             if last_op == '*':
                                 num = last_num * num
                             else:
                                 num = last_num*1.0 / num
+                    elif c =='-': # 前面是'(' 或没有的情况下，负数为开始
+                        first_negative = True
                     op_stack.append(c)
                     num_stack.append(num)
                     num = 0
-            print(f"op: {op_stack}, num: {num_stack}")
+            print(f"op: {op_stack}, num: {num_stack},last_num: {num}")
+        if first_negative:
+            num = -num
+            op_stack.pop()
+            num_stack.pop()
+            first_negative = False
         num_stack.append(num)
 
         while len(num_stack) > 1:
@@ -213,3 +235,9 @@ class Test(unittest.TestCase):
         self.assertEqual(self.__calculator.calculate3(formula6), 6)
         formula7 = '(6)'
         self.assertEqual(self.__calculator.calculate3(formula7), 6)
+        formula8 = '-7'
+        self.assertEqual(self.__calculator.calculate3(formula8), -7)
+        formula9 = '-1+(-7+10)+2'
+        self.assertEqual(self.__calculator.calculate3(formula9), 4)
+        formula10 = '(-1)*1+2*(-3)'
+        self.assertEqual(self.__calculator.calculate3(formula10), -7)
