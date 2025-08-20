@@ -110,25 +110,21 @@ class Calculator:
 
     def calculate3(self,formula:str):
         """再在上面的版本中加入对括号的处理
-        # todo 如何解决左边是个完整的括号然后右边接运算符的情况
-        方法：如果运算符左边是')' 做特殊处理，只压运算符不压 num
+        思路：在遇到右括号时，一直将符号栈压出，直到左括号被压出
         """
         op_stack = ['+']
         num_stack = [0]
         num = 0
-        right_flag = False
         for c in formula:
             if c == ' ':
                 continue
             if c.isdigit():
-                right_flag = False
                 num = num * 10 + int(c)
             else :
                 if c == '(':
                     op_stack.append(c)
                 elif c == ')':
                     num_stack.append(num)
-                    num = 0
                     while len(op_stack) > 0 :
                         last_op = op_stack.pop()
                         if last_op == '(':
@@ -144,12 +140,10 @@ class Calculator:
                         else:
                             num_stack.append(f2*1.0 / f1)
                         print(f"op: {op_stack}, num: {num_stack}")
-                    right_flag = True
+                    num = num_stack.pop()
                 else:
-
                     last_op = op_stack[-1] if len(op_stack) > 0 else None
                     if last_op in ['+','-','*','/']:
-                        # todo 要考虑，将之前的优先级比当前运算符高的运算都做了
                         if last_op in ['+', '-']:
                             if c not in ['*','/']:
                                 last_num = num_stack.pop()
@@ -161,13 +155,10 @@ class Calculator:
                             else:
                                 num = last_num*1.0 / num
                     op_stack.append(c)
-                    if not right_flag :
-                        num_stack.append(num)
-                        num = 0
-                    right_flag = False
+                    num_stack.append(num)
+                    num = 0
             print(f"op: {op_stack}, num: {num_stack}")
-        if not right_flag:
-            num_stack.append(num)
+        num_stack.append(num)
 
         while len(num_stack) > 1:
             print(f"op: {op_stack}, num: {num_stack}")
@@ -215,5 +206,10 @@ class Test(unittest.TestCase):
         self.assertEqual(self.__calculator.calculate3(formula3), 60)
         formula4 = '(2+3)*6'
         self.assertEqual(self.__calculator.calculate3(formula4), 30)
-        formula5 = '3*(2+3)-6'
-        self.assertEqual(self.__calculator.calculate3(formula5), 9)
+        formula5 = '(2+3)*(6*2)'
+        self.assertEqual(self.__calculator.calculate3(formula5), 60)
+        # 这个时候应该可以兼容括号内只有一个数的情况
+        formula6 = '6'
+        self.assertEqual(self.__calculator.calculate3(formula6), 6)
+        formula7 = '(6)'
+        self.assertEqual(self.__calculator.calculate3(formula7), 6)
