@@ -128,6 +128,7 @@ class Calculator:
                 if c == '(':
                     op_stack.append(c)
                 elif c == ')':
+                    # 对于负数开头的式子做处理
                     if first_negative:
                         num = -num
                         op_stack.pop()  # pop -
@@ -159,7 +160,7 @@ class Calculator:
                             num_stack.pop()
                             first_negative = False
                         elif last_op in ['+', '-']:
-                            if c not in ['*','/']:
+                            if c not in ['*','/']: # 如果是同级的那就先做处理，当前优先级比较高就放着
                                 last_num = num_stack.pop()
                                 num = last_num + num * (1 if last_op == '+' else -1)
                         else:
@@ -169,7 +170,7 @@ class Calculator:
                                 num = last_num * num
                             else:
                                 num = last_num*1.0 / num
-                    elif c =='-': # 前面是'(' 或没有的情况下，负数为开始
+                    elif c =='-': # 前面是'(' 或没有的情况下，即当前式子以负数为开始
                         first_negative = True
                     op_stack.append(c)
                     num_stack.append(num)
