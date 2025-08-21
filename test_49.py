@@ -1,8 +1,8 @@
 """
 关于time模块
+strftime 方法 将时间戳转为 对应格式的时间字符串
+strptime 方法 将时间字符串 转为 时间戳
 """
-
-time_format1 = "YYMMDD"
 
 
 def timestamp_to_string(timestamp, format_str="%Y-%m-%d %H:%M"):
@@ -34,6 +34,15 @@ def string_to_timestamp(time_string, format_str="%Y-%m-%d %H:%M"):
     time_struct = time.strptime(time_string, format_str)
     return time.mktime(time_struct)
 
+
+def get_today_zero():
+    """获取当天的0点"""
+    now = int(time.time())
+    today_zero = time.strftime("%Y-%m-%d", time.localtime(now)) # 先转为整天 时间字符串
+    today_zero = time.strptime(today_zero,"%Y-%m-%d") # 再转 struct.time
+    today_zero = int(time.mktime(today_zero)) # 最后再转回时间戳
+    return today_zero,now
+
 if __name__ == "__main__":
     import time
     now = int(time.time())
@@ -46,3 +55,14 @@ if __name__ == "__main__":
     time_str = "2025-08-19"
     print(string_to_timestamp(time_str,"%Y-%m-%d"))
 
+    time_str = "2025-08-21"
+    timestamp =  time.strptime(time_str,"%Y-%m-%d")
+    print(timestamp)
+    print(time.strftime("%Y-%m-%d %H:%M:%S", timestamp))
+
+    now = int(time.time())
+    time2 =  time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(now))
+    print(time2)
+
+    today_zero,now = get_today_zero()
+    print(today_zero,now)
