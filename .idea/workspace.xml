@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89d34145-8f4e-4c6d-8f01-73d98599df5d" name="Changes" comment="Changes">
-      <change afterPath="$PROJECT_DIR$/test_53.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_55.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_56.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_50.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_50.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_52.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_52.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +132,9 @@
     "Python.test_47.executor": "Run",
     "Python.test_48.executor": "Run",
     "Python.test_49.executor": "Run",
+    "Python.test_52.executor": "Run",
     "Python.test_53.executor": "Run",
+    "Python.test_55.executor": "Run",
     "Python.test_list.executor": "Run",
     "Python.test_sort.executor": "Run",
     "Python.test_string.executor": "Run",
@@ -153,7 +156,53 @@
       <recent name="E:\Python_study\HelloWorld" />
     </key>
   </component>
-  <component name="RunManager" selected="Python 测试.test_53.Test.test_complex_parentheses 的 Python 测试">
+  <component name="RunManager" selected="Python.test_55">
+    <configuration name="test_52" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="HelloWorld" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_52.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_55" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="HelloWorld" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_55.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="test_53.Test 的 Python 测试" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="HelloWorld" />
       <option name="ENV_FILES" value="" />
@@ -202,45 +251,13 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="test_53.Test.test_decimal_numbers 的 Python 测试" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="HelloWorld" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_53.Test.test_decimal_numbers&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test_53.Test.test_format_error_unmatched_parentheses 的 Python 测试" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="HelloWorld" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_53.Test.test_format_error_unmatched_parentheses&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test_55" />
+        <item itemvalue="Python.test_52" />
         <item itemvalue="Python 测试.test_53.Test.test_complex_parentheses 的 Python 测试" />
         <item itemvalue="Python 测试.test_53.Test 的 Python 测试" />
         <item itemvalue="Python 测试.test_53.Test.test_complex_expression_with_negatives 的 Python 测试" />
-        <item itemvalue="Python 测试.test_53.Test.test_decimal_numbers 的 Python 测试" />
-        <item itemvalue="Python 测试.test_53.Test.test_format_error_unmatched_parentheses 的 Python 测试" />
       </list>
     </recent_temporary>
   </component>
@@ -288,7 +305,7 @@
       <workItem from="1755521303725" duration="51000" />
       <workItem from="1755521512642" duration="29819000" />
       <workItem from="1755791638136" duration="15280000" />
-      <workItem from="1756001582271" duration="1545000" />
+      <workItem from="1756001582271" duration="12613000" />
     </task>
     <servers />
   </component>
@@ -386,7 +403,9 @@
     <SUITE FILE_PATH="coverage/HelloWorld$test_32.coverage" NAME="test_32 覆盖结果" MODIFIED="1751472287231" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/HelloWorld$test_15.coverage" NAME="test_15 覆盖结果" MODIFIED="1748304411204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/HelloWorld$test_47.coverage" NAME="test_47 覆盖结果" MODIFIED="1755409644594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HelloWorld$test_55.coverage" NAME="test_55 覆盖结果" MODIFIED="1756607987260" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/HelloWorld$test_20.coverage" NAME="test_20 覆盖结果" MODIFIED="1749347917265" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HelloWorld$test_52.coverage" NAME="test_52 覆盖结果" MODIFIED="1756022457788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/HelloWorld$test_23.coverage" NAME="test_23 覆盖结果" MODIFIED="1749688724519" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/HelloWorld$test51.coverage" NAME="test51 覆盖结果" MODIFIED="1755699723880" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/HelloWorld$test_18.coverage" NAME="test_18 覆盖结果" MODIFIED="1749569020197" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
